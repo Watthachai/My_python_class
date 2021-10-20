@@ -1,4 +1,5 @@
-from typing import Tuple
+import itertools
+
 
 
 class Car:
@@ -28,9 +29,7 @@ class Car:
                 self.report.append(list(new_report))
                 self.new_report = tuple(self.report)
                 
-                #print(self.new_report)
                 #print(self.report)
-                return f'{self.report}'
                 
             
                 
@@ -39,15 +38,23 @@ class Car:
                 # return all pass maintenance price
 
                 total = 0
-               # for num in self.report:
-
-                pass
+                for i in self.new_report:
+                        total += i[2]
+                return f'All pass maintenance price is {total}'
                 
 
         def max_payment(self):
                 #return all maintenance record (Date, discription, price) that have maximun price
                 #in case there is no maintenance record return empty list.
                 
+                if len(self.new_report) != 0:
+                        for i in range(len(self.new_report)):
+                                print(self.new_report[i+1][2])
+                                        
+                                                
+
+
+
                 pass
 
 c1 = Car('AB1234', 'Honda',  'White')
@@ -57,7 +64,8 @@ print(c1)
 print(c2)
 
 c1.add_report(('25 May 2017', 'change tires' , 1500))
-c1.add_report(('25 May 2017', 'change tires' , 2000))
+c1.add_report(('25 May 2017', 'change Break' , 2000))
 
-print(c1.total_payment())
+#print(c1.total_payment())
+print(c1.max_payment())
 
