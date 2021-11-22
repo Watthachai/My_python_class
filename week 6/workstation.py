@@ -13,7 +13,7 @@ def deal_card(cards):
                 card = cards.pop() #สร้างตัวแปรรับค่า card จากที่เอาออกจาก List
                 hand.append(card)
         
-        print(cards)
+        #print(cards)
         return(hand)
 
 def add_card(cards,hand):

@@ -44,7 +44,7 @@ class shopping_cart:
 
     def __lt__(self, rhs):
         # ตะกร้าที่มีราคารวมของหนังสือน้อยกว่า จะเป็นตะกร้าที่น้อยกว่า
-        return self.total > rhs.total
+        return self.total < rhs.total
 
 
 Komet_shop = shopping_cart(64015060)
@@ -54,14 +54,16 @@ Komet_shop.add_book('b3', 5, 700)
 Komet_shop.add_book('b2', 15,100)
 Komet_shop.add_book('b2', 15,100)
 Komet_shop.delete_book('b4')
+print(Komet_shop.book)
 print(Komet_shop.get_total())
 
 Ko_shop = shopping_cart(6239010028)
 Ko_shop.add_book('b1', 1, 500)
 Ko_shop.add_book('b1', 5, 500)
 Ko_shop.add_book('b3', 5, 700)
-Ko_shop.add_book('b2', 15,600)
-Ko_shop.add_book('b2', 15,600)
+Ko_shop.add_book('b2', 1,600)
+Ko_shop.add_book('b2', 20,600)
+print(Ko_shop.book)
 print(Ko_shop.get_total())
 
 
